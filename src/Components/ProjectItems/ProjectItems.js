@@ -6,6 +6,17 @@ class ProjectItems extends Component {
     super(props);
 
     this.state = {
+      projects: []
+    }
+  }
+
+  // LifeCycle Mathods
+  // componentWillMount() {  // Nope
+  // }
+
+  // api calles, and subscrib here-dont forget to unsubscrib in unmount
+  componentDidMount() {
+    this.setState( {
       projects: [
         {
           title: 'React Web APP',
@@ -17,7 +28,7 @@ class ProjectItems extends Component {
           platform: 'Mobile-Tablet'
         }
       ]
-    }
+    })
   }
   render() {
     return(
