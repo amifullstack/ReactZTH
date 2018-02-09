@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return(
       <div className='App'>
-        App Main Page
+        App Main Page        
         <ProjectItems name="testme"/>   
       </div>
     )

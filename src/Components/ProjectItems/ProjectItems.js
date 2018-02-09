@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Projects from '../Projects/Projects';
+import AddProjects from '../AddProjects/AddProjects';
 
 class ProjectItems extends Component {
   constructor(props) {
@@ -30,10 +31,24 @@ class ProjectItems extends Component {
       ]
     })
   }
+
+  handleAddProjects(project) {
+    // Receiving props -> Set to main state Note. sate is immutable
+
+    // get current state
+    let projects = this.state.projects;
+    // Push new state to current state
+    projects.push(project);
+
+    // Not done yet set it
+    this.setState( {projects: projects})
+  }
   render() {
     return(
       <div className="projectstore">
         <p>This is ProjectItems {this.props.name}</p>  
+        {/* pass state and recieve props */}
+        <AddProjects addProject={ (project) => this.handleAddProjects(project) } /> {/* AddProject we receiving*/}
         <Projects projects={this.state.projects}/>      
       </div>
     )
